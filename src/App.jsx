@@ -19,8 +19,11 @@ const App = () => {
   const taskDone = (task) => {
     if (task.completed) {
       task.completed = false
+      task.title = task.title.replace(' (Done)','')
+
     } else {
       task.completed = true
+      task.title = task.title + " (Done)"
     }
     console.log(task.completed)
     const newTasks = [...tasks]
@@ -29,7 +32,7 @@ const App = () => {
 
 
   const handleTaskAddition = (taskTitle) => {
-    if (taskTitle === '') {
+    if (taskTitle === '' || taskTitle === ' ') {
       return false
     } else {
       const newTasks = [
@@ -46,6 +49,7 @@ const App = () => {
 
   return (
     <>
+      <h1>Tasklist</h1>
       <div className="container">
         <AddTask handleTaskAddition={handleTaskAddition}/>
         <Tasks tasks={tasks} DelTask={DelTask} taskDone={taskDone}/>

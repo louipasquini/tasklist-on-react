@@ -16,7 +16,7 @@ const AddTask = ({ handleTaskAddition }) => {
     }
 
     return (
-        <div>
+        <div className="adicionador">
             <input value={inputData} onChange={handleInputChange} type="text" />
             <Button onClick={handleAddTaskClick}>Add</Button>
         </div>
