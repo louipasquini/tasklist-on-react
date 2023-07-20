@@ -2,11 +2,16 @@ import React from "react";
 import "./Task.css"
 import Button from "./Button";
 
-const Task = ({ task }) => {
+const Task = ({ task , DelTask}) => {
+
+    const handleDelTask = () => {
+        DelTask(task)
+    }
+
     return (
-    <div class="task">
+    <div className="task">
         <div className="task-container">{task.title}</div>
-        <Button>Del</Button>
+        <Button onClick={handleDelTask}>Del</Button>
     </div>
     )
 }

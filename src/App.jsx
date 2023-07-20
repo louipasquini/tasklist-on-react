@@ -7,6 +7,18 @@ import "./App.css"
 const App = () => {
   const [tasks, setTasks] = useState([])
 
+  const DelTask = (task) => {
+    const deletar = tasks.indexOf(task)
+    if (deletar > -1) {
+      console.log(deletar)
+      tasks.splice(deletar, 1)
+      const newTasks = [...tasks]
+      console.log(newTasks)
+      setTasks(newTasks)
+    }
+  }
+
+
   const handleTaskAddition = (taskTitle) => {
     if (taskTitle === '') {
       return false
@@ -27,7 +39,7 @@ const App = () => {
     <>
       <div className="container">
         <AddTask handleTaskAddition={handleTaskAddition}/>
-        <Tasks tasks={tasks} />
+        <Tasks tasks={tasks} DelTask={DelTask}/>
       </div>
     </>
 
