@@ -8,8 +8,15 @@
     align-items: center;
     margin-top: 10px;
     box-shadow: 4px 4px 8px rgba(0,0,0,0.35);
+    transition: border-left 0.1s ease-in-out;
+    transition: color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .task {
     display: flex;
+}
+
+.task-container:hover {
+    border-left: 4px solid white;
 }
